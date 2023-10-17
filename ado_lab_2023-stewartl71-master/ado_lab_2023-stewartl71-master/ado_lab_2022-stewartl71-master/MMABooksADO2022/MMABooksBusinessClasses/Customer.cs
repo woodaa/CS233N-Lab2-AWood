@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace MMABooksBusinessClasses
 {
@@ -18,9 +19,52 @@ namespace MMABooksBusinessClasses
             ZipCode = zipcode;
         }
 
-        public int CustomerID { get; set; }
+        public int CustomerID
+        {
+            get
+            {
+                return customerID;
+            }
+            set
+            {
+                if (value > 0)
+                    customerID = value;
+                else
+                    throw new ArgumentOutOfRangeException("Customer ID must be a positive integer");
+            }
+        }
+        public int CustomerID
+        {
+            get
+            {
+                return customerID;
+            }
+            set
+            {
+                if (value > 0)
+                    customerID = value;
+                else
+                    throw new ArgumentOutOfRangeException("Customer ID must be a positive integer");
+            }
 
-        public string Name { get; set; }
+        }
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                if (value.Trim().Length > 0 && value.Length <= 100)
+                    name = value;
+                else
+                    throw new ArgumentOutOfRangeException("Must be at least one characer, and no more than 100.");
+            }
+
+
+        }
 
         public string Address { get; set; }
 
@@ -36,3 +80,5 @@ namespace MMABooksBusinessClasses
         }
     }
 }
+    
+
