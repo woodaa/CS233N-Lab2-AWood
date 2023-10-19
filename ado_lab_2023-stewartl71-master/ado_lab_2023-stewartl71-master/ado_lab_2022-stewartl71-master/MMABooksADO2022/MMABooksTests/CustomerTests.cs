@@ -17,7 +17,7 @@ namespace MMABooksTests
         public void Setup()
         {
             def = new Customer();
-            c = new Customer(1, "Donald Duck", "101 Main Street", "Orlando", "FL", "10001");
+            c = new Customer(1, "Donald, Duck", "101 Main Street", "Orlando", "FL", "10001");
         }
         [Test]
         public void TestConstructor()

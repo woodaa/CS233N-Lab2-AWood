@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Xml.Linq;
+
 
 namespace MMABooksBusinessClasses
+
 {
     public class Customer
     {
@@ -18,6 +19,16 @@ namespace MMABooksBusinessClasses
             State = state;
             ZipCode = zipcode;
         }
+
+        private int customerID;
+        private string name;
+        private string address;
+        private string city;
+        private string state;
+        private string zipcode;
+            
+            
+
         /*
         public int CustomerID
         {
