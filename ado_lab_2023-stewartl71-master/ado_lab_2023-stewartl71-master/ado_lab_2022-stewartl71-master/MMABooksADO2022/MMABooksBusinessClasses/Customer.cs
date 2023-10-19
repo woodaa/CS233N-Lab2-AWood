@@ -18,7 +18,7 @@ namespace MMABooksBusinessClasses
             State = state;
             ZipCode = zipcode;
         }
-
+        /*
         public int CustomerID
         {
             get
@@ -33,6 +33,7 @@ namespace MMABooksBusinessClasses
                     throw new ArgumentOutOfRangeException("Customer ID must be a positive integer");
             }
         }
+        */
         public int CustomerID
         {
             get
@@ -66,13 +67,65 @@ namespace MMABooksBusinessClasses
 
         }
 
-        public string Address { get; set; }
+        public string Address {
+            get
+            {
+                return address;
+            }
 
-        public string City { get; set; }
+            set
+            {
+                if (value.Trim().Length > 0 && value.Length <= 100)
+                    address = value;
+                else
+                    throw new ArgumentOutOfRangeException("Must be at least one characer, and no more than 100.");
+            }
+        }
 
-        public string State { get; set; }
+        public string City {
+            get
+            {
+                return city;
+            }
 
-        public string ZipCode { get; set; }
+            set
+            {
+                if (value.Trim().Length > 0 && value.Length <= 100)
+                    city = value;
+                else
+                    throw new ArgumentOutOfRangeException("Must be at least one characer, and no more than 100.");
+            }
+        }
+
+        public string State {
+            get
+            {
+                return state;
+            }
+
+            set
+            {
+                if (value.Trim().Length > 0 && value.Length <= 35)
+                    state = value;
+                else
+                    throw new ArgumentOutOfRangeException("Must be at least one characer, and no more than 35.");
+            }
+        }
+
+        public string ZipCode {
+            get
+            {
+                return zipcode;
+            }
+
+            set
+            {
+                if (value.Trim().Length > 0 && value.Length <= 11)
+                    zipcode = value;
+                else
+                    throw new ArgumentOutOfRangeException("Must be at least one characer, and no more than 11.");
+            }
+        }
 
         public override string ToString()
         {

@@ -39,5 +39,80 @@ namespace MMABooksTests
 
         }
 
+        [Test]
+        public void TestSettersNameTooShort()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.Name = " ");
+        }
+        public void TestSettersNameTooLong()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.Name = "012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678");
+        }
+
+
+        //-----------------------------
+
+        [Test]
+        public void TestSettersAddressTooShort()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.Address = "     ");
+
+        }
+        [Test]
+        public void TestSettersAddressTooLong()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.Address = "01234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567");
+
+        }
+
+        //-----------------------------
+
+
+        [Test]
+        public void TestSettersCityTooShort()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.City = "     ");
+
+        }
+        [Test]
+        public void TestSettersCityTooLong()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.City = "0123456789012345678901234567890123456789");
+
+        }
+
+
+        //-----------------------------
+
+        [Test]
+        public void TestSettersStateTooShort()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.State = "     ");
+
+        }
+        [Test]
+        public void TestSettersStateTooLong()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.State = "0123456789012345678901234567890123456789");
+
+        }
+
+
+        //-----------------------------
+
+        [Test]
+        public void TestSettersZipCodeTooShort()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.ZipCode = "     ");
+
+        }
+        [Test]
+        public void TestSettersZipCodeTooLong()
+        {
+            Assert.Throws<ArgumentOutOfRangeException>(() => c.ZipCode = "0123456789012345678901234567890123456789");
+
+        }
+        //-----------------------------
+
     }
 }
