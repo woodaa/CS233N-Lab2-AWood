@@ -30,6 +30,7 @@ namespace MMABooksBusinessClasses
         private string Description;
         private int UnitPrice;
         private int OnHandQuantity;
+
         public int ProductCode
         {
             get
@@ -68,7 +69,7 @@ namespace MMABooksBusinessClasses
 
             set
             {
-                if (value > -1)
+                if (value >= 0)
                     unitprice = value;
                 else
                     throw new ArgumentOutOfRangeException("The price must be a number");
@@ -86,7 +87,7 @@ namespace MMABooksBusinessClasses
 
             set
             {
-                if (value > -1)
+                if (value > 0)
                     ohq = value;
                 else
                     throw new ArgumentOutOfRangeException("The on hand quanity of the of a product should exist whether its zero or not.");
